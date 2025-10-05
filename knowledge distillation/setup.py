@@ -14,7 +14,7 @@ def install_requirements():
     """Install required packages"""
     print("Installing required packages...")
     try:
-        subprocess.check_call([sys.executable, "-m", "pip", "install", "-r", "requirements.txt"])
+        subprocess.check_call([sys.executable, "-m", "uv","pip", "install", "-r", "requirements.txt"])
         print("✅ Requirements installed successfully!")
         return True
     except subprocess.CalledProcessError as e:
@@ -56,8 +56,8 @@ def main():
         return
     
     # Install requirements
-    if not install_requirements():
-        return
+    # if not install_requirements():
+    #     return
     
     # Create models directory and dummy models
     if not os.path.exists("models"):
